@@ -6,8 +6,22 @@ export default defineConfig({
   define: {
     'process.env': process.env
   },
+  build: {
+    outDir: 'dist',
+    sourcemap: false,
+    minify: 'terser',
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vendor: ['react', 'react-dom'],
+          convex: ['convex'],
+          ui: ['framer-motion', '@heroicons/react']
+        }
+      }
+    }
+  },
   server: {
-    host: true,  // 允许外部访问
-    port: 5173,  // 默认端口
+    host: true,
+    port: 5173,
   }
 });
