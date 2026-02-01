@@ -7,7 +7,7 @@ function App() {
         <h1>Multi-Agent Dashboard</h1>
       </header>
       <main>
-        <p>Multi-Agent System Dashboard Loading...</p>
+        <p>Loading dashboard...</p>
       </main>
     </div>
   );
