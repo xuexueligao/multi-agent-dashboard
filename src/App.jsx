@@ -1,15 +1,17 @@
 import React from 'react';
+import { ConvexProvider, ConvexReactClient } from 'convex/react';
+import Dashboard from './pages/Dashboard';
+
+// 使用环境变量中的 Convex URL
+const convex = new ConvexReactClient(import.meta.env.VITE_CONVEX_URL || "https://small-eagle-531.convex.cloud");
 
 function App() {
   return (
-    <div className="app">
-      <header>
-        <h1>Multi-Agent Dashboard</h1>
-      </header>
-      <main>
-        <p>Multi-Agent System Dashboard Loading...</p>
-      </main>
-    </div>
+    <ConvexProvider client={convex}>
+      <div className="app">
+        <Dashboard />
+      </div>
+    </ConvexProvider>
   );
 }
 
