@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debug Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .error-section {
+            background: #ffe6e6;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+        .success-section {
+            background: #e6ffe6;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Debug Info for Multi-Agent Dashboard</h1>
+        
+        <div class="success-section">
+            <h2>Current Status</h2>
+            <p>This page confirms that the basic HTML/CSS loads correctly.</p>
+        </div>
+        
+        <div class="error-section">
+            <h2>Possible Issues</h2>
+            <ol>
+                <li>JavaScript errors in the console preventing React app from loading</li>
+                <li>CORS issues blocking external resources</li>
+                <li>Bundle loading failure</li>
+                <li>Missing environment variables</li>
+            </ol>
+        </div>
+        
+        <div class="success-section">
+            <h2>Troubleshooting Steps</h2>
+            <ol>
+                <li>Check browser console for errors (F12)</li>
+                <li>Hard refresh the page (Ctrl+F5 or Cmd+Shift+R)</li>
+                <li>Try in an incognito/private window</li>
+                <li>Clear browser cache</li>
+            </ol>
+        </div>
+        
+        <div class="success-section">
+            <h2>Browser Console Instructions</h2>
+            <p>To check for JavaScript errors:</p>
+            <ol>
+                <li>Press F12 to open Developer Tools</li>
+                <li>Go to the "Console" tab</li>
+                <li>Refresh the page</li>
+                <li>Look for red error messages</li>
+            </ol>
+        </div>
+    </div>
+    
+    <script>
+        console.log("Debug: Basic JavaScript is running");
+        console.log("Debug: This confirms JS execution is possible");
+        
+        // Test if DOM manipulation works
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log("Debug: DOMContentLoaded event fired");
+            const successElement = document.createElement('div');
+            successElement.className = 'success-section';
+            successElement.innerHTML = '<h3>Dynamic Content Test</h3><p>This paragraph was added dynamically via JavaScript</p>';
+            document.querySelector('.container').appendChild(successElement);
+        });
+    </script>
+</body>
+</html>
